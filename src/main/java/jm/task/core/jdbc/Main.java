@@ -1,5 +1,6 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
@@ -12,8 +13,10 @@ public class Main {
         user.saveUser("Никита", "Савичев", (byte) 31);
         user.saveUser("Илья", "Власов", (byte) 53);
         user.saveUser("Петр", "Маркович", (byte) 61);
-        // usser.removeUserById(2); Удаление по ID
-        user.getAllUsers();
+        user.removeUserById(3);
+        for (User allUser : user.getAllUsers()) {
+            System.out.println(allUser);
+        }
         user.cleanUsersTable();
         user.dropUsersTable();
     }
