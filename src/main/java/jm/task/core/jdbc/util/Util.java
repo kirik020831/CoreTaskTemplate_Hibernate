@@ -44,12 +44,14 @@ public class Util {
             e.printStackTrace();
         }
     }
+
     public static Util getInstance() {
         if (null == instance) {
             instance = new Util();
         }
         return instance;
     }
+
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
